@@ -320,7 +320,7 @@ class TestMain {
 					alpha(1.0, 16)
 					nowTime = globalTime
 					stepTime = 32
-					rotate(-10.0, 40).interpolator(dec)
+					rotate(-10.0, 40)
 					hold.holdTime(16).speed(6.0).above(false)
 					stepTime = 8
 					click.x(-0.3).speed(2.4)
@@ -338,7 +338,7 @@ class TestMain {
 					alpha(1.0, 16)
 					nowTime = globalTime
 					stepTime = 32
-					rotate(10.0, 40).interpolator(dec)
+					rotate(10.0, 40)
 					hold.holdTime(16).speed(6.0).above(false)
 					stepTime = 8
 					click.x(0.3).speed(2.4)
@@ -356,7 +356,7 @@ class TestMain {
 					alpha(1.0, 16)
 					nowTime = globalTime
 					stepTime = 32
-					rotate(0.0, 40).interpolator(dec)
+					rotate(0.0, 40)
 					hold.holdTime(16).speed(6.0).above(false)
 					stepTime = 8
 					click.x(-0.3).speed(2.4)
@@ -491,7 +491,9 @@ class TestMain {
 				speed(1.0)
 			}
 		}
-		println(chart.toPhigros.toString())
-		println(chart.toPhiEditor())
+		File("/home/mivik/LAB/phigros/chart/out.json")
+			.writeText(chart.toPhigros().toString())
+		File("/home/mivik/Share/PhiEditor/Something Comforting.pec")
+			.writeText(chart.toPhiEditor())
 	}
 }
