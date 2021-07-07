@@ -178,7 +178,7 @@ fun JudgeLine.toPhigros() = JSONObject().apply {
 
 fun Chart.toPhigros() = JSONObject().apply {
 	put("formatVersion", FORMAT_VERSION)
-	put("offset", -offset)
+	put("offset", offset)
 	put("numOfNotes", judgeLines.sumOf { it.notes.size })
 	put("judgeLineList", JSONArray().apply {
 		for (judgeLine in judgeLines)
