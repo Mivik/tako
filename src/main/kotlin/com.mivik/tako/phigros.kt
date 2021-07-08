@@ -163,7 +163,7 @@ fun JudgeLine.toPhigros() = JSONObject().apply {
 				put("time", note.time)
 				put("positionX", note.position * RELATIVE_X_SCALE)
 				put("holdTime", note.holdTime)
-				put("speed", note.speed)
+				put("speed", note.speed * (if (note is Note.Hold) event.speed else 1.0))
 				put(
 					"floorPosition",
 					event.floorPosition + (note.time - event.startTime) * secondsPerTime * event.speed
