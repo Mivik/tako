@@ -15,6 +15,8 @@ private fun toJSON(events: List<JudgeLine.Event>) = JSONArray().apply {
 		start2: Double, end2: Double,
 		interpolator: Interpolator? = null
 	) {
+		if (startTime > endTime)
+			error("Overlap detected: $startTime and $endTime")
 		if (interpolator == null) {
 			put(JSONObject().apply {
 				put("startTime", startTime)
