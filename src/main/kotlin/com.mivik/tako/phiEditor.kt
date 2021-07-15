@@ -59,7 +59,7 @@ private class PhiEditorBuilder(val chart: Chart) {
 	}
 
 	init {
-		line((chart.offset * 1000).roundToInt())
+		line((chart.offset * 1000 + 150).roundToInt())
 		line("bp 0 ${chart.bpm}")
 		for ((index, judgeLine) in chart.judgeLines.withIndex()) {
 			add(judgeLine.notes, index)
